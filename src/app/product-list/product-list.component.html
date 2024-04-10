@@ -1,0 +1,27 @@
+<div class="heatmap-container">
+  <div class="heatmap-table">
+    <table>
+      <tbody>
+        <h5 class="row-heading">IMPACT</h5>
+        <tr *ngFor="let item of data; let i = index">
+          <td class="row-name">{{ rowNames[i] }}</td>
+          <td
+            *ngFor="let value of item.values"
+            [style.background-color]="value.color"
+          >
+            {{ value.value }}
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th></th>
+          <td *ngFor="let columnName of columnNames" class="column-name">
+            {{ columnName }}
+          </td>
+        </tr>
+        <h5 class="column-heading">LIKELIHOOD</h5>
+      </tfoot>
+    </table>
+  </div>
+</div>
